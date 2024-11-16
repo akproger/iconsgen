@@ -296,7 +296,7 @@ function handleImageUpload(event) {
 
         // Добавляем общую кнопку для сохранения всех сеток
         const saveAllButton = document.createElement("button");
-        saveAllButton.textContent = "Сохранить все сетки";
+        saveAllButton.textContent = "Сохранить все";
         saveAllButton.addEventListener("click", saveAllGridsAsZip);
         appContainer.appendChild(saveAllButton);
 
