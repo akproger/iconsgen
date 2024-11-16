@@ -32,24 +32,38 @@
         *{
             font-family: "Open Sans", sans-serif;
             font-optical-sizing: auto;
+            box-sizing: border-box;
+        }
+        html, body{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            width: 100vw;
+            overflow-x: hidden;
+        }
+        body > *{
+            margin: 0 auto;
         }
         .icon-wrapper{
-            width: 512px;
-            height: 512px;
-            position: fixed;
-            top: 102px;
-            right: 20px;
-            display: flex;
+            /* width: fit-content !important; */
+            height: auto;
+            position: relative;
+            right: 0;
             align-items: center;
             justify-content: center;
             padding: 20px;
-            border: 1px solid #777;
+            border: 0px solid #777;
+            padding: 0;
+            max-width: 100%;
+            display: flex;
+            width: 100% !important;
+            flex-direction: column-reverse;
         }
         .icon-wrapper h3{
             display: inline-block;
-            position: absolute;
-            left: -100px;
-            top: 0;
+            position: relative;
+            z-index: 20;
         }
         #upload{
             background: #b5d0d7;
@@ -60,9 +74,10 @@
             border-radius: 8px;
             margin-bottom: 20px;
             margin-top: 20px;
-            margin-left: 10px;
+            margin-left: auto;
             color: #fff;
             padding: 9px;
+            margin-right: auto;
         }
         .icon-wrapper + button{
             margin-left: 10px;
@@ -76,9 +91,17 @@
             margin-top: 20px;
         }
         textarea{
-            width: 265px;
-            margin-left: 10px;
-            height: 330px;
+            width: 100%;
+            margin-left: 0px;
+            padding: 0;
+            text-align: left;
+            box-sizing: border-box;
+            display: none;
+            height: 260px;
+            border: none;
+            padding: 20px;
+            background: #efefef;
+            border-radius: none;
         }
         h1{
             font-size: 20px;
@@ -93,22 +116,46 @@
             text-align: center;
             display: block;
             width: fit-content;
-            margin: -10px auto 0;
-            background: #efefef;
+            margin: 15px auto 0;
             padding: 5px 10px 6px;
             border-radius: 30px;
         }
+        .icon-grid {
+            opacity: 1;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+        .icon-grid:not(.hidden) {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .hidden {
+            opacity: 1;
+            pointer-events: none;
+        }
+        h3.active {
+            font-weight: bold;
+            color: red;
+        }
+        .main-div{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .main-div .icon-wrapper + button{
+            width: 50%;
+        }
     </style>
     <input type="file" id="upload" accept="image/*">
-    <textarea class="code-for-include" style="display: none">
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/icon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/icon-16x16.png">
-        <link rel="icon" href="safari-pinned-tab.svg" sizes="any" type="image/svg+xml"> 
-        <link rel="manifest" href="/manifest.json">
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-        <meta name="theme-color" content="#ffffff"> 
-    </textarea>
     <script src="script.js"></script>
+    <textarea class="code-for-include">
+            <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+            <link rel="icon" type="image/png" sizes="32x32" href="/icon-32x32.png">
+            <link rel="icon" type="image/png" sizes="16x16" href="/icon-16x16.png">
+            <link rel="icon" href="safari-pinned-tab.svg" sizes="any" type="image/svg+xml"> 
+            <link rel="manifest" href="/manifest.json">
+            <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+            <meta name="theme-color" content="#ffffff"> 
+    </textarea>
 </body>
 </html>

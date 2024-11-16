@@ -32,6 +32,7 @@ function resetApp() {
 
 // Создание контейнеров для всех сеток
 const appContainer = document.createElement("div");
+appContainer.className = "main-div";
 document.body.appendChild(appContainer);
 
 // Функция для генерации динамических шагов (до трех шагов)
@@ -280,7 +281,7 @@ function handleImageUpload(event) {
 
         let titlePosition = 0; // Инициализация вертикального позиционирования заголовков
         gridSizes.forEach((gridSize) => {
-            titlePosition += 40; // Инкрементируем положение заголовка
+            // titlePosition += 40; // Инкрементируем положение заголовка
             const steps = generateDynamicSteps(startValues[gridSize]);
             const container = createGridInterface(gridSize, steps, titlePosition);
             generateHtmlCssGrid(gridSize, startValues[gridSize], container); // Генерация с минимальными значениями
@@ -300,32 +301,14 @@ function handleImageUpload(event) {
         saveAllButton.addEventListener("click", saveAllGridsAsZip);
         appContainer.appendChild(saveAllButton);
 
-        document.querySelector(".code-for-include").style.display = "block";
+        let codeForCopy = document.querySelector(".code-for-include");
+        codeForCopy.style.display = "inline-table";
+        codeForCopy.addEventListener("click", function(){
+            this.select();
+            document.execCommand('copy')
+        })
     };
 }
 
 // Привязка загрузки файла
 upload.addEventListener("change", handleImageUpload);
-
-// CSS
-const style = document.createElement("style");
-style.textContent = `
-.icon-grid {
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-}
-.icon-grid:not(.hidden) {
-    opacity: 1;
-    pointer-events: auto;
-}
-.hidden {
-    opacity: 0;
-    pointer-events: none;
-}
-h3.active {
-    font-weight: bold;
-    color: red;
-}
-`;
-document.head.appendChild(style);
