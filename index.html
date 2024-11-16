@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генератор favicon в стиле pixelart и других иконок под Mac, iOS, Android и MS</title>
+    <meta name="description" content="Иконки в фрматах ico, svg, png. Дополнительные файлы manifest.json (под андроид) и browserconfig.xml (для MS плитки)">
+    <meta property="og:title" content="Генератор favicon в стиле pixelart и других иконок под Mac, iOS, Android и MS">
+    <meta property="og:description" content="Иконки в фрматах ico, svg, png. Дополнительные файлы manifest.json (под андроид) и browserconfig.xml (для MS плитки)">
+    <meta property="og:url" content="https://iconsgen.ru">
+    <meta property="og:image" content="https://iconsgen.ru/images/icon-512x512.png">
+    <meta property="og:image:secure_url" content="https://iconsgen.ru/images/icon-512x512.png">
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jszip/dist/jszip.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icon-16x16.png">
+    <link rel="icon" href="images/safari-pinned-tab.svg" sizes="any" type="image/svg+xml"> 
+    <link rel="manifest" href="images/manifest.json">
+    <link rel="mask-icon" href="images/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Генератор favicon в стиле pixelart и других иконок под Mac, iOS, Android и MS - полный пакет</h1>
+    <h2>Иконки в фрматах ico, svg, png. Дополнительные файлы manifest.json (под андроид) и browserconfig.xml (для MS плитки)</h2>
+    <style>
+        *{
+            font-family: "Open Sans", sans-serif;
+            font-optical-sizing: auto;
+        }
+        .icon-wrapper{
+            width: 512px;
+            height: 512px;
+            position: fixed;
+            top: 102px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            border: 1px solid #777;
+        }
+        .icon-wrapper h3{
+            display: inline-block;
+            position: absolute;
+            left: -100px;
+            top: 0;
+        }
+        #upload{
+            background: #b5d0d7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+            margin-left: 10px;
+            color: #fff;
+            padding: 9px;
+        }
+        .icon-wrapper + button{
+            margin-left: 10px;
+            height: 40px;
+            border-radius: 40px;
+            border: none;
+            widtH: 271px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            background: #ffa100;
+            margin-top: 20px;
+        }
+        textarea{
+            width: 265px;
+            margin-left: 10px;
+            height: 330px;
+        }
+        h1{
+            font-size: 20px;
+            margin-top: 20px;
+            margin-left: 10px;
+            text-align: center;
+        }
+        h2{
+            font-size: 14px;
+            margin-left: 10px;
+            font-weight: 400;
+            text-align: center;
+            display: block;
+            width: fit-content;
+            margin: -10px auto 0;
+            background: #efefef;
+            padding: 5px 10px 6px;
+            border-radius: 30px;
+        }
+    </style>
+    <input type="file" id="upload" accept="image/*">
+    <textarea class="code-for-include" style="display: none">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/icon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/icon-16x16.png">
+        <link rel="icon" href="safari-pinned-tab.svg" sizes="any" type="image/svg+xml"> 
+        <link rel="manifest" href="/manifest.json">
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="theme-color" content="#ffffff"> 
+    </textarea>
+    <script src="script.js"></script>
+</body>
+</html>
