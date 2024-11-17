@@ -191,6 +191,9 @@ function saveAllGridsAsZip() {
         const svgCode = generateSvgForGrid(gridSize, cellSize, container);
         zip.file(`icon-${gridSize}x${gridSize}.svg`, svgCode);
 
+        // Убедимся, что сетка видима перед рендерингом
+        container.classList.remove("hidden");
+
         // Добавляем PNG в ZIP
         promises.push(
             html2canvas(container, {
@@ -227,6 +230,9 @@ function saveAllGridsAsZip() {
                 }
             })
         );
+
+        // Вернём скрытый класс обратно после рендеринга
+        container.classList.add("hidden");
     });
 
     // Добавляем manifest.json
